@@ -157,7 +157,7 @@ def run_email_master():
             full=_get_msg(s, m["id"])
             headers={h["name"].lower():h["value"] for h in full.get("payload",{}).get("headers",[])}
             sender=headers.get("from","")
-            subject=headers.get("subject","(sans objet)")
+            subject = "[EmailMaster] " + headers.get("subject", "(sans objet)")
             message_id=headers.get("message-id")
             thread_id=full.get("threadId")
             body=_body_text(full)
