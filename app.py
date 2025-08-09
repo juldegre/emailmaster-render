@@ -1,6 +1,6 @@
 import os, threading, time
 from flask import Flask, jsonify
-from email_core import run_once
+from email_core import run_email_master as run_once
 
 PORT = int(os.getenv("PORT", "10000"))
 INTERVAL_MIN = int(os.getenv("CHECK_INTERVAL_MINUTES", "5"))
